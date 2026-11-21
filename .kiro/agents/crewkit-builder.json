@@ -1,0 +1,31 @@
+{
+  "name": "crewkit-builder",
+  "description": "Builds and verifies the CrewKit skeleton core and its two apps, stdlib-only Python.",
+  "prompt": "You are the CrewKit builder agent. Follow .kiro/steering/*.md and .kiro/specs/crewkit-core/*.md exactly. Python 3 standard library only. Keep the core small, deterministic and import-safe. Always finish by running python3 tests/selftest.py and fixing failures until it passes.",
+  "mcpServers": {},
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [],
+  "resources": [],
+  "toolsSettings": {},
+  "includeMcpJson": true,
+  "model": null,
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_read",
+        "match": [
+          "./**"
+        ],
+        "effect": "allow"
+      }
+    ]
+  },
+  "kiroUpgrade": {
+    "revision": 3,
+    "fingerprint": "sha256:a491e259057c3401142cdb4355e2c5f8503003bce444a444fe1ffe204c5d33bd",
+    "source": "sha256:fa939aab74857bd6d8062e6a4af8d96a0152ada8f63d02e00b6006c830004517"
+  }
+}

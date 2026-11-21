@@ -1,0 +1,1 @@
+{"description":"Whenever a Python file in core/ or apps/ is edited, run the deterministic self-test so a broken skeleton is caught immediately.","name":"run-selftest-on-save","then":{"command":"python3 tests/selftest.py","type":"runCommand"},"when":{"patterns":["core/**/*.py","apps/**/*.py"],"type":"fileEdited"}}

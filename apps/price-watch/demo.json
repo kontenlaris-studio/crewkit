@@ -1,0 +1,26 @@
+{
+  "config": {},
+  "state": {
+    "watchlist": [
+      {
+        "id": 0,
+        "name": "Widget",
+        "url": "https://example.com/widget",
+        "target_price": 50.0,
+        "alerted": false
+      },
+      {
+        "id": 1,
+        "name": "Gadget",
+        "url": "https://example.com/gadget",
+        "target_price": 100.0,
+        "alerted": false
+      }
+    ]
+  },
+  "pages": {
+    "https://example.com/widget": "<html><head><script type=\"application/ld+json\">{\"name\": \"Widget\", \"price\": \"45.99\"}</script></head><body>Widget for sale</body></html>",
+    "https://example.com/gadget": "<html><body>Gadget price: $120.00</body></html>"
+  },
+  "fake_time": "2024-01-01T12:00:00Z"
+}

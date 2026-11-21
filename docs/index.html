@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrewKit — a skeleton-crew automation template</title>
+<meta name="description" content="One tiny dependency-free core, a crew of apps. Built with Kiro for Kiroween 2026 (Skeleton Crew).">
+<style>
+  :root{--bg:#0d0a14;--panel:#171226;--panel2:#1f1833;--ink:#efeaff;--mut:#a99fd1;--acc:#ff7a00;--acc2:#8b5cf6;--ok:#4ade80;--line:#2d2450}
+  *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(1100px 500px at 70% -10%,#2a1b4d 0%,var(--bg) 55%);color:var(--ink)}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 20px 64px}
+  .badge{display:inline-block;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--mut);font-size:13px;background:rgba(23,18,38,.7)}
+  h1{font-size:52px;line-height:1.02;margin:18px 0 8px} h1 .thin{color:var(--acc)}
+  .sub{font-size:19px;color:var(--mut);max-width:640px;line-height:1.5}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 8px}
+  a.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700;background:var(--acc);color:#1a0e00}
+  a.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  h2{font-size:26px;margin:44px 0 6px} p.lead{color:var(--mut);line-height:1.6;max-width:720px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .mod{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .mod b{color:var(--acc2)} .mod span{display:block;color:var(--mut);font-size:13.5px;margin-top:5px;line-height:1.45}
+  .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:16px}
+  .term{background:#0a0810;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .term header{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--panel2);font-size:13.5px;color:var(--mut)}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .term pre{margin:0;padding:16px;font:13.5px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;min-height:118px;color:#d8d2f5}
+  .term .cmd{color:var(--acc)} .term .out{color:var(--ok)}
+  .run{margin:0 14px 14px;background:var(--acc2);color:#fff;border:0;padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+  .run:disabled{opacity:.55;cursor:default}
+  ul.how{color:var(--mut);line-height:1.75;padding-left:20px;max-width:760px} ul.how b{color:var(--ink)}
+  footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px;color:var(--mut);font-size:14px}
+  footer a{color:var(--acc)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">🎃 Kiroween 2026 · Skeleton Crew · Built with Kiro</span>
+  <h1>CrewKit<br><span class="thin">one tiny core. a crew of apps.</span></h1>
+  <p class="sub">A lean, dependency-free automation skeleton — scheduler, config, state and
+  notifications in ~430 lines of stdlib Python — proven by two distinct applications
+  that share nothing but the core.</p>
+  <div class="cta">
+    <a class="btn" href="https://github.com/kontenlaris-studio/crewkit">Get the skeleton on GitHub</a>
+    <a class="btn ghost" href="https://github.com/kontenlaris-studio/crewkit/blob/main/KIRO.md">How Kiro built it</a>
+  </div>
+
+  <h2>🦴 The skeleton</h2>
+  <p class="lead">Five modules, one responsibility each. Copy <code>core/</code> into any
+  project and your app wakes up with a heartbeat, a memory and a voice.</p>
+  <div class="grid">
+    <div class="mod"><b>config.py</b><span>JSON config + <code>CREWKIT_*</code> env overrides</span></div>
+    <div class="mod"><b>clock.py</b><span>UTC time + a pure due-job scheduler</span></div>
+    <div class="mod"><b>store.py</b><span>Atomic JSON state — crash-safe writes</span></div>
+    <div class="mod"><b>notify.py</b><span>Console, file &amp; webhook sinks</span></div>
+    <div class="mod"><b>runner.py</b><span>Runs due jobs, records outcomes, alerts on failure</span></div>
+  </div>
+
+  <h2>👻 The crew — two apps, one core</h2>
+  <p class="lead">Both demos below are the apps' real offline <code>--demo</code> output.
+  Press run and watch the skeleton do its work.</p>
+  <div class="apps">
+    <div class="term">
+      <header><span class="dot" style="background:#f87171"></span><span class="dot" style="background:#fbbf24"></span><span class="dot" style="background:#4ade80"></span> apps/telegram-task-bot</header>
+      <pre id="t1">$ python3 apps/telegram-task-bot/bot.py --demo
+</pre>
+      <button class="run" data-t="t1">▶ Run demo</button>
+    </div>
+    <div class="term">
+      <header><span class="dot" style="background:#f87171"></span><span class="dot" style="background:#fbbf24"></span><span class="dot" style="background:#4ade80"></span> apps/price-watch</header>
+      <pre id="t2">$ python3 apps/price-watch/watch.py --demo
+</pre>
+      <button class="run" data-t="t2">▶ Run demo</button>
+    </div>
+  </div>
+
+  <h2>🪄 Built with Kiro, spec-first</h2>
+  <ul class="how">
+    <li><b>Steering files</b> for product, tech and structure governed every session.</li>
+    <li><b>A spec</b> (requirements R1–R6, design, tasks) was written before the code.</li>
+    <li><b>A custom agent</b> (<code>crewkit-builder</code>) implemented the core and both apps via Kiro CLI, under a hard rule: finish only when the self-test passes.</li>
+    <li><b>A hook</b> re-runs the deterministic self-test whenever a Python file changes.</li>
+    <li><b>Verified:</b> 34/34 tests pass offline; both demo modes run in under a second.</li>
+  </ul>
+
+  <footer>
+    CrewKit · MIT License · A <a href="https://kiroween.devpost.com">Kiroween 2026</a> Skeleton Crew entry by
+    <a href="https://github.com/kontenlaris-studio">Kontenlaris Studio</a> ·
+    <a href="https://github.com/kontenlaris-studio/crewkit">github.com/kontenlaris-studio/crewkit</a>
+  </footer>
+</div>
+<script>
+  const demos = {
+    t1: ["[2024-01-01T12:00:00Z] Reminder: Review code — Task due at 2024-01-01T11:00:00Z", "Demo completed."],
+    t2: ["[2026-11-21T10:23:31Z] Price Alert: Widget — Price $45.99 <= target $50.0", "Demo completed."]
+  };
+  document.querySelectorAll(".run").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const pre = document.getElementById(btn.dataset.t);
+      btn.disabled = true;
+      let i = 0;
+      const lines = demos[btn.dataset.t];
+      const tick = () => {
+        if (i < lines.length) {
+          const s = document.createElement("span");
+          s.className = "out"; s.textContent = lines[i] + "\n";
+          pre.appendChild(s); i++; setTimeout(tick, 650);
+        } else { btn.textContent = "↻ Run again"; btn.disabled = false;
+          btn.onclick = () => { pre.innerHTML = pre.innerHTML.split("\n")[0] + "\n"; btn.click; location.reload(); }; }
+      };
+      setTimeout(tick, 400);
+    });
+  });
+</script>
+</body>
+</html>

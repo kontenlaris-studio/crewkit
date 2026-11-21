@@ -1,0 +1,12 @@
+$ python3 tests/selftest.py
+Ran 34 tests in 0.248s
+
+OK
+
+$ python3 apps/telegram-task-bot/bot.py --demo
+[2024-01-01T12:00:00Z] Reminder: Review code — Task due at 2024-01-01T11:00:00Z
+Demo completed.
+
+$ python3 apps/price-watch/watch.py --demo
+[2026-11-21T10:23:31Z] Price Alert: Widget — Price $45.99 <= target $50.0
+Demo completed.
